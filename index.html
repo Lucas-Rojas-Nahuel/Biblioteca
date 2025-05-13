@@ -4,9 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="js.js" defer></script>
+    <meta name="description" content="Biblioteca web interactiva para agregar, gestionar y visualizar libros. Fácil de usar, ideal para practicar desarrollo frontend con JavaScript.">
+
+
     <title>Biblioteca</title>
   </head>
   <body>
-    <script src="js.js"></script>
+    <main class="container">
+      <dialog class="modal">
+        <div class="modal-header">
+          <h2>Add Book</h2>
+          <button class="close-btn" autofocus>&times;</button>
+        </div>
+        <form id="bookForm" class="form">
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" required />
+          </div>
+
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="pages">Pages</label>
+            <input type="number" name="pages" id="pages" required />
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label for="read">Read</label>
+            <input type="checkbox" name="read" id="read" />
+          </div>
+
+          <button type="submit" class="submit-btn">Add Book</button>
+        </form>
+      </dialog>
+
+      <div class="header">
+        <h1>Library</h1>
+        <button id="addBookBtn" class="add-btn">+ Add Book</button>
+      </div>
+
+      <table id="table" class="book-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Pages</th>
+            <th>Read Status</th>
+            <th>Delete Books</th>
+          </tr>
+        </thead>
+
+        <tbody class="tbody"></tbody>
+      </table>
+    </main>
+    <footer>&copy; 2025 Lucas Rojas Dev</footer>
+    <div id="custom-alert" class="custom-alert hidden"></div>
+    <div id="custom-everything-in-order" class="everything-in-order hidden "></div>
   </body>
 </html>
