@@ -67,6 +67,9 @@ function showBooks(book) {
   btn.textContent = "Delete";
   btn.classList.add("delete-btn");
   btn.addEventListener("click", () => {
+    const filtrado = myLibrary.filter((obj) => obj.id !== book.id);
+    myLibrary.length = 0;
+    myLibrary.push(...filtrado);
     tr.remove();
   });
 
