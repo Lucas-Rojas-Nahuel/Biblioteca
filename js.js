@@ -70,6 +70,7 @@ function showBooks(book) {
     const filtrado = myLibrary.filter((obj) => obj.id !== book.id);
     myLibrary.length = 0;
     myLibrary.push(...filtrado);
+    showAlert("Book successfully deleted");
     tr.remove();
   });
 
